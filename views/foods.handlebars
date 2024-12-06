@@ -1,0 +1,41 @@
+{{!-- Dispalys search bar --}}
+    <div class="column is-9.5">
+    <section class="hero is-info">
+      <div class="hero-body">
+        <div class="container">
+          <div class="card">
+            <div class="card-content">
+              <div class="content">
+                <div class="control has-icons-left has-icons-right search-field">
+                  <input class="input is-large" type="text" placeholder="" v-model="search" id="searchBar"/><span class="icon is-medium is-left"><i class="fa fa-search" id="search"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+{{!-- Dispays foods --}}
+    <div class="column is-9.5">
+                    <div class="card-table">
+                        <div class="content">
+                            <table class="table is-fullwidth is-striped">
+                                <tbody class="standard">
+                                  {{#each foods}}
+                                    <tr>
+                                        <td width="5%">{{this.serving_size}}{{this.serving_unit}}</td>
+                                        <td><a href="#"> {{this.name}}</a></td>
+                                        <td>{{this.calories}}cals protein:{{this.protein}}g carbs:{{this.carbs}}g fat:{{this.fat}}g</td>
+                                        <td class="level-right"><button><ion-icon data-foodid="{{this.id}}" name="add-circle-outline"></ion-icon></button></td>
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+    </div>
+    </div>
+
+    <script src="/js/food-portion.js"></script>
